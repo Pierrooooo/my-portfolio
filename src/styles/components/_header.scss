@@ -1,0 +1,38 @@
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 1rem;
+    top: 0;
+    left: calc(50% - 600px);
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        max-width: 1500px;
+
+        .my-logo{
+            width: 4rem;
+            aspect-ratio: 1;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+// @media screen and (mmax-width: 1200px) {
+//     .header{
+//         left: 50%;
+//     }
+// }
