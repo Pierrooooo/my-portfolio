@@ -82,7 +82,6 @@ export function initHome() {
         end: "+=" + window.innerHeight * steps.length * steps.length,
         scrub: true,
         pin: true,
-        markers: true,
       },
     });
 
