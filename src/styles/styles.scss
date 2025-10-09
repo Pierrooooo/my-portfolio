@@ -1,9 +1,9 @@
-@use "abstracts/reset";
-@use "abstracts/variables";
-@use "abstracts/mixins";
-@use "abstracts/typos";
-@use "components/header";
-@use "components/footer";
-@use "pages/home";
-@use "pages/works";
-@use "pages/sandbox";
+@use "./abstracts/_variables.scss" as *;
+@use "./abstracts/_mixins.scss" as *;
+@use "./abstracts/_reset.scss";
+@use "./abstracts/_typos.scss";
+@use "./components/_header.scss";
+@use "./components/_footer.scss";
+@use "./pages/_home.scss";
+@use "./pages/_sandbox.scss";
+@use "./pages/_works.scss";
