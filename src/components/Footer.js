@@ -26,7 +26,7 @@ class Footer extends HTMLElement {
         <p class="footer_title">
           <span>Pierre CAILLET</span>
           <span>Front End Dev</span>
-          <span>Creativ Dev</span>
+          <span>Creative Dev</span>
         </p>
 
         <div class="footer_lists">
