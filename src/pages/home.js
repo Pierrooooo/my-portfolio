@@ -1,3 +1,4 @@
+import { setPageClass } from "../router.js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
@@ -55,6 +56,7 @@ export function renderHome() {
 }
 
 export function initHome() {
+  setPageClass("home");
   gsap.registerPlugin(ScrollTrigger);
 
   function splitTextToSpans(selector) {

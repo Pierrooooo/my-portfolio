@@ -1,4 +1,4 @@
-// src/pages/works.js
+import { setPageClass } from "../router.js";
 import gsap from "gsap";
 import { scaleFadeTitle, staggerText } from "../utils/gsapAnimations.js";
 
@@ -20,6 +20,8 @@ export function renderWorks() {
 }
 
 export function initWorks() {
+  setPageClass("works");
+
   ctx = gsap.context(() => {
     // Animate title and list using your shared utils
     scaleFadeTitle(".works-title");

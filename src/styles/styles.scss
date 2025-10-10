@@ -1,5 +1,6 @@
 @use "./abstracts/_variables.scss" as *;
 @use "./abstracts/_mixins.scss" as *;
+@use "./abstracts/_global.scss" as *;
 @use "./abstracts/_reset.scss";
 @use "./abstracts/_typos.scss";
 @use "./components/_header.scss";

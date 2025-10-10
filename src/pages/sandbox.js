@@ -1,3 +1,4 @@
+import { setPageClass } from "../router.js";
 import gsap from "gsap";
 import * as THREE from "three";
 import { fadeUpText } from "../utils/gsapAnimations.js";
@@ -17,6 +18,8 @@ export function renderSandbox() {
 }
 
 export function initSandbox() {
+  setPageClass("sandbox");
+
   ctx = gsap.context(() => {
     fadeUpText(".sandbox-title");
     fadeUpText(".sandbox-subtitle", { delay: 0.2 });
