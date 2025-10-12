@@ -1,0 +1,63 @@
+.sandbox_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  text-align: center;
+  background: radial-gradient(circle at center, #f8f8f8 0%, #e9e9e9 100%);
+  color: #222;
+  overflow: hidden;
+  position: relative;
+
+  .sandbox {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100dvh;
+
+    .sandbox-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::after {
+        content: "⚙️";
+        display: inline-block;
+        animation: spin 2.5s linear infinite;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #00c9ff 0%, #92fe9d 100%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(140px);
+      opacity: 0.15;
+      z-index: -1;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
