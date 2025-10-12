@@ -3899,7 +3899,7 @@ void main() {
               <h3><span>Discutons</span></h3>
               <p><span>Dans un premier temps il m’est important de vous rencontrer pour que nous discutions de votre projet et de vos besoins.</span></p>
             </div>
-            <img src="assets/unsplash.avif" alt="Rencontre">
+            <img src="assets/meet.avif" alt="Rencontre">
           </div>
 
           <div class="process-step" data-step="2">
@@ -3908,7 +3908,7 @@ void main() {
               <h3><span>Prototype</span></h3>
               <p><span>La réalisation de votre maquette est une étape importante pour visualiser le rendu final de votre site.</span></p>
             </div>
-            <img src="assets/unsplash2.avif" alt="Design">
+            <img src="assets/figma.avif" alt="Design">
           </div>
 
           <div class="process-step" data-step="3">
@@ -3917,7 +3917,7 @@ void main() {
               <h3><span>Réalisation</span></h3>
               <p><span>Finalisation du projet pendant laquelle je développe le site et prépare la mise en ligne.</span></p>
             </div>
-            <img src="assets/unsplash3.avif" alt="Développement">
+            <img src="assets/dev.avif" alt="Développement">
           </div>
 
         </div>
