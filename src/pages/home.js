@@ -13,9 +13,26 @@ let time = 0;
 export function renderHome() {
   return `
     <section class="home">
-      <div class="hero">
-        <h1 class="hero-title"><span>Home</span></h1>
-      </div>
+      <div class="intro">
+          <h1 class="intro__title">
+            <span class="intro__firstname">Pierre</span>
+            <span class="intro__photo">
+              <img src="assets/me.jpg" alt="Pierre Caillet">
+            </span>
+            <span class="intro__lastname">CAILLET</span>
+          </h1>
+          <h2 class="intro__subtitle">
+            FRONT END<br>DEVELOPPEUR
+          </h2>
+          <p class="intro__text">
+            J’ai pour but de devenir Creative Front End Developpeur, ce qui signifie qu’à terme je souhaite créer non seulement des sites web élégants, UX friendly, mais aussi des expériences qui sortent de l’ordinaire.
+          </p>
+          <div class="go-scroll"><span></span></div>
+        </div>
+
+        <div class="three-container">
+          <canvas></canvas>
+        </div>
 
       <div id="three-container" class="three-container"></div>
 
@@ -57,6 +74,7 @@ export function renderHome() {
 
 export function initHome() {
   setPageClass("home");
+
   gsap.registerPlugin(ScrollTrigger);
 
   function splitTextToSpans(selector) {
@@ -68,6 +86,89 @@ export function initHome() {
         .join("");
     });
   }
+
+  splitTextToSpans(".intro__firstname");
+  splitTextToSpans(".intro__lastname");
+  splitTextToSpans(".intro__subtitle");
+
+  const introTl = gsap.timeline({ delay: 0.3, paused: true });
+
+  const firstLetters = document.querySelectorAll(".intro__firstname span");
+  const lastLetters = document.querySelectorAll(".intro__lastname span");
+  const subtitleLetters = document.querySelectorAll(".intro__subtitle span");
+  const introText = document.querySelectorAll(".intro__text");
+  const goScroll = document.querySelectorAll(".go-scroll");
+
+//   introTl.set(firstLetters, { y: 100 });
+//   introTl.set(lastLetters, { y: -100 });
+//   introTl.set(subtitleLetters, { opacity: 0, y: 40 });
+//   introTl.set(introText, { opacity: 0, y: 40 });
+//   introTl.set(".intro__photo", { scale: 3, rotation: 15 });
+
+  introTl.to(".intro__photo", {
+    scale: 1,
+    rotation: 4,
+    duration: 1.2,
+    ease: "power3.out",
+  });
+
+  introTl.to(
+    firstLetters,
+    {
+      y: 0,
+      stagger: 0.05,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=1"
+  );
+
+  introTl.to(
+    lastLetters,
+    {
+      y: 0,
+      stagger: 0.05,
+      duration: 0.6,
+      ease: "power3.out",
+    },
+    "-=0.9"
+  );
+
+  introTl.to(
+    subtitleLetters,
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.03,
+      duration: 0.8,
+      ease: "power2.out",
+    },
+    "-=0.4"
+  );
+  introTl.to(
+    introText,
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.03,
+      duration: 0.8,
+      ease: "power2.out",
+    },
+    "-=0.4"
+  );
+  introTl.to(
+    goScroll,
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.03,
+      duration: 0.8,
+      ease: "power2.out",
+    },
+    "-=0.4"
+  );
+
+  setTimeout(() => introTl.play(), 300);
 
   ctx = gsap.context(() => {
     scaleFadeTitle(".hero-title");
@@ -149,7 +250,11 @@ export function initHome() {
         )
         .to(
           img,
-          { xPercent: -100, duration: 0.3 * stepDuration, ease: "power3.inOut" },
+          {
+            xPercent: -100,
+            duration: 0.3 * stepDuration,
+            ease: "power3.inOut",
+          },
           "<"
         )
         .to(step, { autoAlpha: 0, duration: 0.1 });
