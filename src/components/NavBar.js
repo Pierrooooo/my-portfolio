@@ -3,21 +3,25 @@ import { navigateTo } from "../router.js";
 class NavBar extends HTMLElement {
   constructor() {
     super();
-    this.onRouteChange = this.onRouteChange.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.onRouteChange = this.onRouteChange.bind(this);
   }
 
   connectedCallback() {
     this.render();
     document.addEventListener("routeChange", this.onRouteChange);
 
-    this.querySelector(".burger-btn").addEventListener("click", this.toggleMenu);
-    this.querySelector(".overlay").addEventListener("click", this.toggleMenu);
-    this.querySelectorAll(".fullscreen-menu a").forEach(link =>
+    const burger = this.querySelector(".burger-btn");
+    const overlay = this.querySelector(".overlay");
+
+    burger.addEventListener("click", this.toggleMenu);
+    overlay.addEventListener("click", this.toggleMenu);
+
+    this.querySelectorAll("nav a").forEach(link =>
       link.addEventListener("click", () => this.closeMenu())
     );
 
-    this.querySelectorAll(".fullscreen-menu a").forEach(link => {
+    this.querySelectorAll("nav a").forEach(link => {
       const text = link.textContent.trim();
       link.innerHTML = text
         .split("")
@@ -40,25 +44,16 @@ class NavBar extends HTMLElement {
   }
 
   toggleMenu() {
-    const menu = this.querySelector(".fullscreen-menu");
-    const overlay = this.querySelector(".overlay");
-    const burger = this.querySelector(".burger-btn");
-    menu.classList.toggle("open");
-    overlay.classList.toggle("open");
-    burger.classList.toggle("open");
+    this.classList.toggle("menu-open");
   }
 
   closeMenu() {
-    const menu = this.querySelector(".fullscreen-menu");
-    const overlay = this.querySelector(".overlay");
-    const burger = this.querySelector(".burger-btn");
-    menu.classList.remove("open");
-    overlay.classList.remove("open");
-    burger.classList.remove("open");
+    this.classList.remove("menu-open");
   }
 
   render() {
     const path = window.location.pathname;
+
     this.innerHTML = `
       <div class="site-header">
         <div class="burger-btn">
@@ -68,17 +63,11 @@ class NavBar extends HTMLElement {
           <span></span>
         </div>
 
-        <nav class="nav" aria-label="Navigation principale">
-          <a href="/" data-link class="nav__link ${path === "/" ? "active" : ""}">Accueil</a>
-          <a href="/sandbox" data-link class="nav__link ${path === "/sandbox" ? "active" : ""}">Sandbox</a>
-          <a href="/works" data-link class="nav__link ${path === "/works" ? "active" : ""}">Works</a>
-        </nav>
-
-        <div class="fullscreen-menu">
+        <nav class="main-nav" aria-label="Navigation principale">
           <a href="/" data-link class="${path === "/" ? "active" : ""}">Accueil</a>
           <a href="/sandbox" data-link class="${path === "/sandbox" ? "active" : ""}">Sandbox</a>
           <a href="/works" data-link class="${path === "/works" ? "active" : ""}">Works</a>
-        </div>
+        </nav>
 
         <div class="overlay"></div>
       </div>

@@ -1,23 +1,24 @@
+@use "../abstracts/mixins" as *;
+
 .site-header {
   position: fixed;
-  z-index: 2000;
   top: 0;
+  width: 100%;
+  z-index: 2000;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 1rem;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 
   .burger-btn {
+    display: none;
     cursor: pointer;
     position: relative;
     width: 2rem;
     height: 1.5rem;
     z-index: 3000;
-    pointer-events: auto;
 
     span {
       display: block;
@@ -31,7 +32,8 @@
 
       &:nth-child(1) {
         top: 0;
-        left: 0;
+        right: 0;
+        width: 70%;
       }
       &:nth-child(2),
       &:nth-child(3) {
@@ -40,25 +42,30 @@
       }
       &:nth-child(4) {
         bottom: 0;
-        left: 0;
+        right: 0;
+        width: 70%;
+      }
+
+      .menu-open & {
+        &:nth-child(1),
+        &:nth-child(4) {
+          width: 0;
+        }
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
       }
     }
 
-    &.open {
-      span:nth-child(1),
-      span:nth-child(4) {
-        opacity: 0;
-      }
-      span:nth-child(2) {
-        transform: rotate(45deg);
-      }
-      span:nth-child(3) {
-        transform: rotate(-45deg);
-      }
+    @include mobile {
+      display: block;
     }
   }
 
-  .nav {
+  nav.main-nav {
     display: flex;
     gap: 2rem;
 
@@ -72,84 +79,63 @@
       }
     }
 
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
+    @include mobile {
+      position: fixed;
+      top: 56px;
+      right: 0;
+      width: calc(100% - 56px);
+      height: calc(100dvh - (56px * 2));
+      border-radius: 3rem 0 0 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      background: #000;
+      transform: translateX(100%);
+      transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+      z-index: 1000;
 
-  .fullscreen-menu {
-    position: fixed;
-    top: 56px;
-    right: 0;
-    width: 90vw;
-    height: calc(100dvh - (56px * 2));
-    border-radius: 3rem 0 0 3rem;
-    background: rgba(0, 0, 0, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 1000;
-    overflow: hidden;
+      a {
+        color: #fff;
+        font-size: 12vw;
+        margin-left: 4rem;
+        overflow: hidden;
 
-    a {
-      color: #fff;
-      font-size: 20vw;
-      margin: 1rem 0;
-      text-decoration: none;
-      display: inline-block;
-      overflow: hidden;
-
-      &.active {
-        text-decoration: underline;
+        .letter {
+          display: inline-block;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 0.4s ease,
+            transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+          transition-delay: calc(var(--i) * 0.03s + 0.05s);
+        }
       }
 
-      .letter {
-        display: inline-block;
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.4s ease,
-          transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        transition-delay: calc(var(--i) * 0.03s + 0.05s);
+      .menu-open & {
+        transform: translateX(0);
+
+        a .letter {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-    }
-
-    &.open {
-      transform: translateX(0);
-
-      a .letter {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    // Fermeture douce
-    &:not(.open) a .letter {
-      opacity: 0;
-      transform: translateY(40px);
-      transition-delay: calc((30 - var(--i)) * 0.02s);
     }
   }
 
   .overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
+    inset: 0;
     background: rgba(0, 0, 0, 0.45);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.6s ease;
     z-index: 900;
     pointer-events: none;
+  }
 
-    &.open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
+  .menu-open & .overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 }
