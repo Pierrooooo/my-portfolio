@@ -1,17 +1,17 @@
 import { renderHome, initHome, destroyHome } from "./pages/home.js";
 import { renderWorks, initWorks, destroyWorks } from "./pages/works.js";
-import { renderSandbox, initSandbox, destroySandbox } from "./pages/sandbox.js"; // if it exists
+import { renderSandbox, initSandbox, destroySandbox } from "./pages/sandbox.js";
 
 let currentPage = null;
 
 const routes = {
   "/": { render: renderHome, init: initHome, destroy: destroyHome },
-  "/works": { render: renderWorks, init: initWorks, destroy: destroyWorks },
-  "/sandbox": {
-    render: renderSandbox,
-    init: initSandbox,
-    destroy: destroySandbox,
-  },
+  // "/works": { render: renderWorks, init: initWorks, destroy: destroyWorks },
+  // "/sandbox": {
+  //   render: renderSandbox,
+  //   init: () => initSandbox({ defaultCategory: "scroll", defaultItem: "Reveal Text" }),
+  //   destroy: destroySandbox,
+  // },
 };
 
 export function renderRoute() {

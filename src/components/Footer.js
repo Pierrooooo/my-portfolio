@@ -30,23 +30,8 @@ class Footer extends HTMLElement {
         </p>
 
         <div class="footer_lists">
-          <div class="footer_list">
-            <p class="footer_list_title">Pages</p>
-            <nav class="footer_page_list_links" aria-label="Navigation principale">
-              <a href="/" data-link class="footer_list_link ${
-                path === "/" ? "active" : ""
-              }">Accueil</a>
-              <a href="/sandbox" data-link class="footer_list_link ${
-                path === "/sandbox" ? "active" : ""
-              }">Sandbox</a>
-              <a href="/works" data-link class="footer_list_link ${
-                path === "/works" ? "active" : ""
-              }">Works</a>
-            </nav>
-          </div>
 
           <div class="footer_list">
-            <p class="footer_list_title">Socials</p>
             <ul class="footer_social_list_links">
               <li class="footer_list_link">
                 <a href="https://www.linkedin.com/in/pierre-caillet-447b8a203/" target="_blank" class="footer_list_link">Linkedin</a>

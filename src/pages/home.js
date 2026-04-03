@@ -5,7 +5,7 @@ import * as THREE from "three";
 import ThreeScene from "../utils/threeScene.js";
 
 import { renderHomeIntro, initHomeIntro } from "../components/homeIntro.js";
-import { renderHomeProcess, initHomeProcess } from "../components/homeProcess.js";
+import { renderHomeWorks, initHomeWorks } from "../components/homeWorks.js";
 
 let ctx;
 let three;
@@ -15,9 +15,7 @@ let time = 0;
 export function renderHome() {
   return `
     <section class="home">
-      ${renderHomeIntro()}
-      <div id="three-container" class="three-container"></div>
-      ${renderHomeProcess()}
+      ${renderHomeWorks()}
     </section>
   `;
 }
@@ -29,10 +27,17 @@ export function initHome() {
   initHomeIntro();
 
   ctx = gsap.context(() => {
-    initHomeProcess();
+    initHomeWorks();
   });
 
-  const container = document.querySelector("#three-container");
+  let container = document.querySelector("#three-container");
+  
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "three-container";
+    container.className = "three-container";
+    document.body.prepend(container);
+  }
 
   three = new ThreeScene(container, (scene) => {
     const geometry = new THREE.PlaneGeometry(6, 3, 40, 20);
@@ -68,4 +73,9 @@ export function initHome() {
 export function destroyHome() {
   ctx?.revert();
   three?.dispose();
+  
+  const container = document.querySelector("#three-container");
+  if (container) {
+    container.remove();
+  }
 }

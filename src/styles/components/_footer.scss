@@ -111,6 +111,13 @@ footer.site-footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    cursor: pointer;
+  }
+
+  .footer_page_list_links:hover,
+  .footer_social_list_links:hover {
+    cursor: pointer;
+
   }
 
   .footer_list_link {
@@ -124,6 +131,6 @@ footer.site-footer {
     line-height: 0.75;
     vertical-align: middle;
     width: 100%;
-    text-align: center;
+    text-align: end;
   }
 }

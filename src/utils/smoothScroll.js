@@ -10,7 +10,7 @@ export function initSmoothScroll() {
     smooth: 1.2,
     effects: true,
     normalizeScroll: true,
-    ignore: ".site-header",
+    ignore: "header",
   });
 
   window.addEventListener("resize", () => {

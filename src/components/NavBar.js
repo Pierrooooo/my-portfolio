@@ -64,9 +64,7 @@ class NavBar extends HTMLElement {
         </div>
 
         <nav class="main-nav" aria-label="Navigation principale">
-          <a href="/" data-link class="${path === "/" ? "active" : ""}">Accueil</a>
-          <a href="/sandbox" data-link class="${path === "/sandbox" ? "active" : ""}">Sandbox</a>
-          <a href="/works" data-link class="${path === "/works" ? "active" : ""}">Works</a>
+          <a href="/" data-link class="${path === "/" ? "active" : ""}">Pierre CAILLET</a>
         </nav>
 
         <div class="overlay"></div>
