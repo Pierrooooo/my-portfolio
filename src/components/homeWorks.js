@@ -4,22 +4,43 @@ export function renderHomeWorks() {
       title: "Tubik UX Dribbble",
       year: "2026",
       image: "/assets/tubik.jpg",
-      url: "https://chicago-dribbble-9nel.vercel.app/",
+      url: "https://tubik.8pier.re",
       description: "Integration, Dribbble Design"
     },
     {
       title: "Nicolas CAILLET",
       year: "2026",
       image: "/assets/ncaillet.jpg",
-      url: "https://testnico-ruby.vercel.app/",
+      url: "https://nico-porfolio.8pier.re/",
       description: "Site Photographe"
     },
     {
       title: "La p'tite taverne",
       year: "2025",
       image: "/assets/tavern.jpg",
-      url: "https://www.laptitetaverne.fr/",
+      url: "https://laptitetaverne.fr/",
       description: "Site Restaurant"
+    },
+    {
+      title: "Kiffeur ou Kiffher",
+      year: "2024",
+      image: "/assets/kiffeur.jpg",
+      url: "https://kiffeur.8pier.re",
+      description: "Dev Test"
+    },
+    {
+      title: "Things",
+      year: "2024",
+      image: "/assets/things.jpg",
+      url: "https://things.8pier.re",
+      description: "Dev Test"
+    },
+    {
+      title: "Intersection Observer API",
+      year: "2024",
+      image: "/assets/io-api.jpg",
+      url: "https://io-api.8pier.re/",
+      description: "Dev Test"
     },
   ];
 
