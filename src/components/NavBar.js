@@ -14,8 +14,8 @@ class NavBar extends HTMLElement {
     const burger = this.querySelector(".burger-btn");
     const overlay = this.querySelector(".overlay");
 
-    burger.addEventListener("click", this.toggleMenu);
-    overlay.addEventListener("click", this.toggleMenu);
+    // burger.addEventListener("click", this.toggleMenu);
+    // overlay.addEventListener("click", this.toggleMenu);
 
     this.querySelectorAll("nav a").forEach(link =>
       link.addEventListener("click", () => this.closeMenu())
@@ -56,18 +56,11 @@ class NavBar extends HTMLElement {
 
     this.innerHTML = `
       <div class="site-header">
-        <div class="burger-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
 
         <nav class="main-nav" aria-label="Navigation principale">
           <a href="/" data-link class="${path === "/" ? "active" : ""}">Pierre CAILLET</a>
         </nav>
 
-        <div class="overlay"></div>
       </div>
     `;
   }

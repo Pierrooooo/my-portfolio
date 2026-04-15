@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .home_page {
   .home-works {
     padding: 10rem 20px;
@@ -17,16 +19,29 @@
 
     &__content {
       position: relative;
+      width: 100%;
+      height: 100%;
       padding-bottom: 6rem;
     }
 
     &__title {
       font-size: clamp(3rem, 8vw, 5.5rem);
       font-weight: 700;
-      text-align: center;
+      color: #993955;
+
+      .title-letter,
+      .title-word {
+        display: inline-block;
+        white-space: pre;
+        transform-origin: top center;
+        will-change: transform, opacity;
+      }
     }
 
     &__year {
+      @include mobile {
+        align-self: center;
+      }
     }
 
     &__description {

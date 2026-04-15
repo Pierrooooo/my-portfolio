@@ -8,8 +8,8 @@ header {
 
   .site-header {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 1rem;
   }
 
@@ -20,6 +20,7 @@ header {
     width: 2rem;
     height: 1.5rem;
     z-index: 3000;
+    background-color: transparent;
 
     span {
       display: block;
@@ -80,48 +81,48 @@ header {
       // }
     }
 
-    @include mobile {
-      position: fixed;
-      top: 56px;
-      right: 0;
-      width: calc(100% - 56px);
-      height: calc(100dvh - (56px * 2));
-      border-radius: 3rem 0 0 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
-      background: #000;
-      transform: translateX(100%);
-      transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-      z-index: 1000;
+    // @include mobile {
+    //   position: fixed;
+    //   top: 56px;
+    //   right: 0;
+    //   width: calc(100% - 56px);
+    //   height: calc(100dvh - (56px * 2));
+    //   border-radius: 3rem 0 0 3rem;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: start;
+    //   background: #000;
+    //   transform: translateX(100%);
+    //   transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    //   z-index: 1000;
 
-      a {
-        color: #fff;
-        font-size: 12vw;
-        margin-left: 4rem;
-        overflow: hidden;
+    //   a {
+    //     color: #fff;
+    //     font-size: 12vw;
+    //     margin-left: 4rem;
+    //     overflow: hidden;
 
-        .letter {
-          display: inline-block;
-          opacity: 0;
-          transform: translateY(50px);
-          transition:
-            opacity 0.4s ease,
-            transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-          transition-delay: calc(var(--i) * 0.03s + 0.05s);
-        }
-      }
+    //     .letter {
+    //       display: inline-block;
+    //       opacity: 0;
+    //       transform: translateY(50px);
+    //       transition:
+    //         opacity 0.4s ease,
+    //         transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    //       transition-delay: calc(var(--i) * 0.03s + 0.05s);
+    //     }
+    //   }
 
-      .menu-open & {
-        transform: translateX(0);
+    //   .menu-open & {
+    //     transform: translateX(0);
 
-        a .letter {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    }
+    //     a .letter {
+    //       opacity: 1;
+    //       transform: translateY(0);
+    //     }
+    //   }
+    // }
   }
 
   .overlay {
