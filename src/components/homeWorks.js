@@ -4,13 +4,13 @@ import { splitText } from "../utils/splitText";
 
 export function renderHomeWorks() {
   const projects = [
-    {
-      title: "Tubik UX Dribbble",
-      year: "2026",
-      image: "/assets/tubik.jpg",
-      url: "https://tubik.8pier.re",
-      description: "Integration, Dribbble Design"
-    },
+    // {
+    //   title: "Tubik UX Dribbble",
+    //   year: "2026",
+    //   image: "/assets/tubik.jpg",
+    //   url: "https://tubik.8pier.re",
+    //   description: "Integration, Dribbble Design"
+    // },
     {
       title: "Nicolas CAILLET",
       year: "2026",
