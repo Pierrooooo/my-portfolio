@@ -16,42 +16,44 @@ export function renderHomeWorks() {
       year: "2026",
       image: "/assets/ncaillet.jpg",
       url: "https://nico-portfolio.8pier.re/",
-      description: "Site Photographe"
+      description: "Site Photographe",
     },
     {
       title: "La p'tite taverne",
       year: "2025",
       image: "/assets/tavern.jpg",
       url: "https://laptitetaverne.fr/",
-      description: "Site Restaurant"
+      description: "Site Restaurant",
     },
     {
       title: "Kiffeur ou Kiffher",
       year: "2024",
       image: "/assets/kiffeur.jpg",
       url: "https://kiffeur.8pier.re",
-      description: "Dev Test"
+      description: "Dev Test",
     },
     {
       title: "Things",
       year: "2024",
       image: "/assets/things.jpg",
       url: "https://things.8pier.re",
-      description: "Dev Test"
+      description: "Dev Test",
     },
     {
       title: "Intersection Observer API",
       year: "2024",
       image: "/assets/io-api.jpg",
       url: "https://io-api.8pier.re/",
-      description: "Dev Test"
+      description: "Dev Test",
     },
   ];
 
   return `
     <section class="home-works">
       <div class="home-works__grid">
-        ${projects.map((project, index) => `
+        ${projects
+          .map(
+            (project, index) => `
           <a 
             href="${project.url}" 
             class="home-works__item" 
@@ -66,7 +68,9 @@ export function renderHomeWorks() {
               <p class="home-works__description">${project.description}</p>
             </div>
           </a>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </div>
     </section>
   `;
@@ -74,95 +78,110 @@ export function renderHomeWorks() {
 
 export function initHomeWorks() {
   gsap.registerPlugin(ScrollTrigger);
-  
-  const items = document.querySelectorAll('.home-works__item');
-  
+
+  const items = document.querySelectorAll(".home-works__item");
+
   items.forEach((item, index) => {
-    const yearEl = item.querySelector('.home-works__year');
-    const titleEl = item.querySelector('.home-works__title');
-    const descEl = item.querySelector('.home-works__description');
-    const imageEl = item.querySelector('.home-works__image');
-    
-    const splitResult = splitText(titleEl, { 
-      type: 'words, letters',
-      letterClass: 'title-letter',
-      wordClass: 'title-word'
+    const yearEl = item.querySelector(".home-works__year");
+    const titleEl = item.querySelector(".home-works__title");
+    const descEl = item.querySelector(".home-works__description");
+    const imageEl = item.querySelector(".home-works__image");
+
+    const splitResult = splitText(titleEl, {
+      type: "words, letters",
+      letterClass: "title-letter",
+      wordClass: "title-word",
     });
-    
+
     const titleSpans = splitResult.letters || splitResult.words || [];
-    
-    gsap.set([yearEl, descEl, imageEl], {
+
+    gsap.set([yearEl, descEl], {
       opacity: 0,
-      y: 40
+      y: 40,
     });
-    
+
     gsap.set(titleSpans, {
       opacity: 0,
       y: 70,
       rotateX: -90,
-      transformOrigin: "top center"
+      transformOrigin: "top center",
     });
-    
+
+    gsap.set(imageEl, { clipPath: "inset(100% 0% 0% 0%)", autoAlpha: 1 });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: item,
         start: "top 85%",
         end: "top 60%",
         toggleActions: "play none none reverse",
-      }
+      },
     });
-    
-    tl
-      .to(titleSpans, {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        duration: 0.5,
-        stagger: {
-          amount: 0.4,
-          from: "start",
-          ease: "power2.out"
+
+    tl.to(titleSpans, {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      duration: 0.5,
+      stagger: {
+        amount: 0.4,
+        from: "start",
+        ease: "power2.out",
+      },
+      ease: "back.out(0.4)",
+    })
+      .to(
+        descEl,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
         },
-        ease: "back.out(0.4)"
-      })
-      .to(descEl, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out"
-      }, "-=0.2")
-      .to(imageEl, {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "back.out(0.6)"
-      }, "-=0.2")
-      .to(yearEl, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out"
-      }, "-=0.3");
-    
-    item.addEventListener('click', (e) => {
+        "-=0.2",
+      )
+      .to(
+        imageEl,
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 0.7,
+          ease: "back.out(0.6)",
+        },
+        "-=0.2",
+      )
+      .to(
+        yearEl,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.3",
+      );
+
+    item.addEventListener("click", (e) => {
       console.log(`Project clicked: ${index}`);
     });
   });
-  
+
   setTimeout(() => {
     ScrollTrigger.refresh();
   }, 100);
 }
 
 export function destroyHomeWorks() {
-  ScrollTrigger.getAll().forEach(trigger => {
-    if (trigger.vars.trigger && trigger.vars.trigger.closest('.home-works__item')) {
+  ScrollTrigger.getAll().forEach((trigger) => {
+    if (
+      trigger.vars.trigger &&
+      trigger.vars.trigger.closest(".home-works__item")
+    ) {
       trigger.kill();
     }
   });
-  
-  const items = document.querySelectorAll('.home-works__item');
-  items.forEach(item => {
-    item.removeEventListener('click', () => {});
+
+  const items = document.querySelectorAll(".home-works__item");
+  items.forEach((item) => {
+    item.removeEventListener("click", () => {});
   });
 }

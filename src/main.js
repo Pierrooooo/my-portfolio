@@ -18,3 +18,14 @@ document.querySelector("#app").innerHTML = `
   </div>
   <site-footer></site-footer>
 `;
+
+console.log(`
+______ _                     
+| ___ (_)                    
+| |_/ /_  ___ _ __ _ __ ____
+|  __/| |/ _  | '__| '__/ _ | 
+| |   | |  __/ |  | | | (_) |
+|_|   |_|____|_|  |_| |____/
+
+https://github.com/Pierrooooo
+`);

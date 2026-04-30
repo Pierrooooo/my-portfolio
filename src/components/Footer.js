@@ -39,6 +39,9 @@ class Footer extends HTMLElement {
               <li class="footer_list_link">
                 <a href="https://github.com/Pierrooooo" target="_blank" class="footer_list_link">GitHub</a>
               </li>
+              <li class="footer_list_link">
+                <a href="mailto:pierre.caillet@ik.me" aria-label="Me contacter par email" class="footer_list_link">Email</a>
+              </li>
             </ul>
           </div>
         </div>

@@ -15,6 +15,7 @@ let time = 0;
 export function renderHome() {
   return `
     <section class="home">
+      ${renderHomeIntro()}
       ${renderHomeWorks()}
     </section>
   `;
