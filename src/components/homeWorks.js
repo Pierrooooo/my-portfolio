@@ -123,9 +123,9 @@ export function initHomeWorks() {
       opacity: 1,
       y: 0,
       rotateX: 0,
-      duration: 0.5,
+      duration: 0.3,
       stagger: {
-        amount: 0.4,
+        amount: 0.2,
         from: "start",
         ease: "power2.out",
       },
@@ -136,7 +136,7 @@ export function initHomeWorks() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.3,
           ease: "power2.out",
         },
         "-=0.2",
@@ -145,7 +145,7 @@ export function initHomeWorks() {
         imageEl,
         {
           clipPath: "inset(0% 0% 0% 0%)",
-          duration: 0.7,
+          duration: 0.5,
           ease: "back.out(0.6)",
         },
         "-=0.2",
@@ -155,7 +155,7 @@ export function initHomeWorks() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.3,
           ease: "power2.out",
         },
         "-=0.3",

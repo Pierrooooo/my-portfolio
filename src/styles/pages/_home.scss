@@ -215,6 +215,7 @@
       width: 100%;
       height: 100%;
       padding-bottom: 6rem;
+      cursor: pointer;
     }
 
     &__title {
@@ -228,10 +229,12 @@
         white-space: pre;
         transform-origin: top center;
         will-change: transform, opacity;
+      cursor: pointer;
       }
     }
 
     &__year {
+      cursor: pointer;
       @include mobile {
         align-self: center;
       }
@@ -241,6 +244,7 @@
       position: absolute;
       bottom: 20px;
       left: 0;
+      cursor: pointer;
     }
 
     &__image {

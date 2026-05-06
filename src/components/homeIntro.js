@@ -106,7 +106,7 @@ function animateHomeIntro() {
     ".home-intro__image",
     {
       clipPath: "inset(0% 0% 0% 0%)",
-      duration: 0.9,
+      duration: 0.4,
       ease: "power4.inOut",
     },
     0.5,
