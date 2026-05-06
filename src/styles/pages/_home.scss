@@ -16,7 +16,6 @@
       background: var(--color-background, #fff);
       margin: auto;
       width: 65%;
-      height: 65dvh;
       padding: 1.5rem 2rem;
 
       @include mobile {
@@ -74,7 +73,7 @@
       width: 30%;
 
       @include mobile {
-        width: 50%;
+        width: 70%;
         align-self: end;
       }
     }
@@ -100,23 +99,42 @@
       }
     }
 
-      .home-intro__button {
-        margin-top: 2.5rem;
-        border: 1px solid #111;
-        padding: 0.45rem 1.1rem;
-        font-size: 1rem;
-        letter-spacing: 0.12em;
-        color: #111;
-        text-decoration: none;
-        transition:
-          background 0.2s ease,
-          color 0.2s ease;
+    .home-intro__button {
+      position: relative;
+      margin-top: 2.5rem;
+      border: 1px solid black;
+      padding: 0.45rem 1.1rem;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      color: black;
+      text-decoration: none;
+      background: transparent;
 
-        &:hover {
-          background: #111;
-          color: #fff;
-        }
+      & .texte {
+        display: inline-block;
+        position: relative;
+        mix-blend-mode: difference;
+        z-index: 1;
       }
+
+      & .background{
+        position: absolute;
+        inset: -1px;
+        background: black;
+        transition: transform 0.3s ease;
+        z-index: -1;
+      }
+
+      & .background{
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+
+      &:hover .background {
+        transform: scaleY(1);
+        transform-origin: bottom;
+      }
+    }
 
     &__image {
       width: 100%;
@@ -139,10 +157,7 @@
       gap: 2rem;
       padding-bottom: 0.5rem;
       align-self: end;
-
-      @include mobile {
-        margin-top: 2rem;
-      }
+      margin-top: 2rem;
 
       span {
         font-size: 0.65rem;
