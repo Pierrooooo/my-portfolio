@@ -3871,7 +3871,7 @@ void main() {
         <div class="home-intro__main">
           <div class="home-intro__left">
             <h1 class="home-intro__description">Developpeur web</h1>
-            <p class="home-intro__title"><span>Développeur Front End</span><span>Shopify E commerce</span><span>Site Vitrine</span></p>
+            <p class="home-intro__title"><span>Développeur Front End</span><span>Shopify E commerce</span><span>Site Vitrine</span><span>Audit</span></p>
           </div>
           <div class="home-intro__right">
             <div class="home-intro__image">
