@@ -55,6 +55,7 @@ export function renderHomeWorks() {
           .map(
             (project, index) => `
           <a 
+            data-cursor-text="Clicker pour voir être redirigé versle projet" 
             href="${project.url}" 
             class="home-works__item" 
             target="_blank"

@@ -1,8 +1,9 @@
 import { renderHome, initHome, destroyHome } from "./pages/home.js";
-import { renderWorks, initWorks, destroyWorks } from "./pages/works.js";
-import { renderSandbox, initSandbox, destroySandbox } from "./pages/sandbox.js";
+// import { renderWorks, initWorks, destroyWorks } from "./pages/works.js";
+// import { renderSandbox, initSandbox, destroySandbox } from "./pages/sandbox.js";
 
 let currentPage = null;
+let cursorInstance = null;
 
 const routes = {
   "/": { render: renderHome, init: initHome, destroy: destroyHome },
@@ -13,6 +14,10 @@ const routes = {
   //   destroy: destroySandbox,
   // },
 };
+
+export function setCursorInstance(instance) {
+  cursorInstance = instance;
+}
 
 export function renderRoute() {
   const path = window.location.pathname;
@@ -25,6 +30,8 @@ export function renderRoute() {
 
   route.init();
   currentPage = route;
+
+  if (cursorInstance) cursorInstance.bindHoverElements();
 }
 
 export function setPageClass(pageName) {

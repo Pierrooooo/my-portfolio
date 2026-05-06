@@ -1,7 +1,51 @@
 main {
-    min-height: 80dvh;
+  min-height: 80dvh;
 }
 body {
-    margin-bottom: 2rem;
-    font-family: "Syne", sans-serif;
+  margin-bottom: 2rem;
+  font-family: "Syne", sans-serif;
+}
+
+p,
+span,
+h1,
+h2,
+h3 {
+  cursor: default;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  width: fit-content;
+  width: 1.5rem;
+  max-width: 350px;
+  height: 1.5rem;
+  height: fit-content;
+  background: white;
+  border: 1px solid black;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__text {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: black;
+    text-align: left;
+    opacity: 0;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.5;
+    width: 100%;
+  }
+}
+
+@media (hover: none) {
+  .custom-cursor {
+    display: none;
+  }
 }

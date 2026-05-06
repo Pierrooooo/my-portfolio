@@ -1,11 +1,16 @@
 import "./styles/styles.scss";
 import "./components/NavBar.js";
 import "./components/Footer.js";
-import { initRouter } from "./router.js";
+import { initRouter, setCursorInstance } from "./router.js";
 import { initSmoothScroll } from "./utils/smoothScroll.js";
+import { initCustomCursor } from "./components/CustomCursor.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
+
+  const cursor = initCustomCursor();
+  setCursorInstance(cursor);
+
   initRouter();
 });
 

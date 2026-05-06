@@ -7,13 +7,18 @@ export function renderHomeIntro() {
         <div class="home-intro__main">
           <div class="home-intro__left">
             <h1 class="home-intro__description">Developpeur web</h1>
-            <p class="home-intro__title"><span>Développeur Front End</span><span>Shopify E commerce</span><span>Site Vitrine</span><span>Audit</span></p>
+            <p class="home-intro__title">
+              <span data-cursor-text="Développeur Front End junior qui souhaite faire ses preuves sur des projets sobres comme créatifs">Développeur Front End</span>
+              <span data-cursor-text="J'ai 1.5 ans d'expérience en tant que développeur de thème shopify">Shopify E commerce</span>
+              <span data-cursor-text="Je donne vie à votre buiseness / association via un site vitrine">Site Vitrine</span>
+              <span data-cursor-text="Je réalise des audits de sites web Seo - UX">Audit</span>
+            </p>
           </div>
           <div class="home-intro__right">
             <div class="home-intro__image">
-              <img src="/assets/me.jpg" alt="Pierre CAILLET">
+              <img src="/assets/photo-of-myself.jpeg" alt="Pierre CAILLET">
             </div>
-            <a href="mailto:pierre.caillet@ik.me" class="home-intro__button" aria-label="Me contacter par email">
+            <a data-cursor-text="email" href="mailto:pierre.caillet@ik.me" class="home-intro__button" aria-label="Me contacter par email">
             <span class="texte">Me contacter</span>
             <span class="background"></span>
             </a>
@@ -64,7 +69,7 @@ function animateHomeIntro() {
     clipPath: "inset(100% 0% 0% 0%)",
     autoAlpha: 1,
   });
-  gsap.set(".home-intro__image img", { scale: 1.4 });
+  gsap.set(".home-intro__image img", { scale: 1.5 });
   gsap.set(".home-intro__meta span", { y: 10, autoAlpha: 0 });
   gsap.set([".home-intro__name", ".home-intro__name--mobile"], {
     y: 24,
@@ -120,7 +125,7 @@ function animateHomeIntro() {
   tl.to(
     ".home-intro__image img",
     {
-      scale: 1,
+      scale: 1.1,
       duration: 1.1,
       ease: "power3.out",
     },
