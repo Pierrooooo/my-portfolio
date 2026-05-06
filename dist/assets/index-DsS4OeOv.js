@@ -3910,7 +3910,7 @@ void main() {
       <div class="home-works__grid">
         ${[{title:"Nicolas CAILLET",year:"2026",image:"/assets/ncaillet.jpg",url:"https://nico-portfolio.8pier.re/",description:"Site Photographe"},{title:"La p'tite taverne",year:"2025",image:"/assets/tavern.jpg",url:"https://laptitetaverne.fr/",description:"Site Restaurant"},{title:"Kiffeur ou Kiffher",year:"2024",image:"/assets/kiffeur.jpg",url:"https://kiffeur.8pier.re",description:"Dev Test"},{title:"Things",year:"2024",image:"/assets/things.jpg",url:"https://things.8pier.re",description:"Dev Test"},{title:"Intersection Observer API",year:"2024",image:"/assets/io-api.jpg",url:"https://io-api.8pier.re/",description:"Dev Test"}].map((e,t)=>`
           <a 
-            data-cursor-text="Clicker pour voir être redirigé versle projet" 
+            data-cursor-text="Clicker pour voir être redirigé vers le projet" 
             href="${e.url}" 
             class="home-works__item" 
             target="_blank"
