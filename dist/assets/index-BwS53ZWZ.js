@@ -3873,8 +3873,8 @@ void main() {
             <h1 class="home-intro__description">Developpeur web</h1>
             <p class="home-intro__title">
               <span data-cursor-text="Développeur Front End junior qui souhaite faire ses preuves sur des projets sobres comme créatifs">Développeur Front End</span>
-              <span data-cursor-text="J'ai 1.5 ans d'expérience en tant que développeur de thème shopify">Shopify E commerce</span>
-              <span data-cursor-text="Je donne vie à votre buiseness / association via un site vitrine">Site Vitrine</span>
+              <span data-cursor-text="J'ai 1.5 an d'expérience en tant que développeur de thème shopify">Shopify E commerce</span>
+              <span data-cursor-text="Je donne vie à votre business / association via un site vitrine">Site Vitrine</span>
               <span data-cursor-text="Je réalise des audits de sites web Seo - UX">Audit</span>
             </p>
           </div>
@@ -3910,7 +3910,7 @@ void main() {
       <div class="home-works__grid">
         ${[{title:"Nicolas CAILLET",year:"2026",image:"/assets/ncaillet.jpg",url:"https://nico-portfolio.8pier.re/",description:"Site Photographe"},{title:"La p'tite taverne",year:"2025",image:"/assets/tavern.jpg",url:"https://laptitetaverne.fr/",description:"Site Restaurant"},{title:"Kiffeur ou Kiffher",year:"2024",image:"/assets/kiffeur.jpg",url:"https://kiffeur.8pier.re",description:"Dev Test"},{title:"Things",year:"2024",image:"/assets/things.jpg",url:"https://things.8pier.re",description:"Dev Test"},{title:"Intersection Observer API",year:"2024",image:"/assets/io-api.jpg",url:"https://io-api.8pier.re/",description:"Dev Test"}].map((e,t)=>`
           <a 
-            data-cursor-text="Clicker pour voir être redirigé vers le projet" 
+            data-cursor-text="Découvrir le projet" 
             href="${e.url}" 
             class="home-works__item" 
             target="_blank"

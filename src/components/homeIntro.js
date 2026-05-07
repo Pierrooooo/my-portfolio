@@ -9,8 +9,8 @@ export function renderHomeIntro() {
             <h1 class="home-intro__description">Developpeur web</h1>
             <p class="home-intro__title">
               <span data-cursor-text="Développeur Front End junior qui souhaite faire ses preuves sur des projets sobres comme créatifs">Développeur Front End</span>
-              <span data-cursor-text="J'ai 1.5 ans d'expérience en tant que développeur de thème shopify">Shopify E commerce</span>
-              <span data-cursor-text="Je donne vie à votre buiseness / association via un site vitrine">Site Vitrine</span>
+              <span data-cursor-text="J'ai 1.5 an d'expérience en tant que développeur de thème shopify">Shopify E commerce</span>
+              <span data-cursor-text="Je donne vie à votre business / association via un site vitrine">Site Vitrine</span>
               <span data-cursor-text="Je réalise des audits de sites web Seo - UX">Audit</span>
             </p>
           </div>
