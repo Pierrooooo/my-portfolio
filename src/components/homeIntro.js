@@ -18,7 +18,7 @@ export function renderHomeIntro() {
             <div class="home-intro__image">
               <img src="/assets/photo-of-myself.jpeg" alt="Pierre CAILLET">
             </div>
-            <a data-cursor-text="email" href="mailto:pierre.caillet@ik.me" class="home-intro__button" aria-label="Me contacter par email">
+            <a data-cursor-text="email" href="mailto:pierrecaillet2811@gmail.com" class="home-intro__button" aria-label="Me contacter par email">
             <span class="texte">Me contacter</span>
             <span class="background"></span>
             </a>

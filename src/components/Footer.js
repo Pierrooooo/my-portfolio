@@ -11,7 +11,7 @@ class Footer extends HTMLElement {
             (l, i) =>
               `<b style="animation-delay:${i * 0.008}s">${
                 l === " " ? "&nbsp;" : l
-              }</b>`
+              }</b>`,
           )
           .join("");
       });
@@ -40,7 +40,7 @@ class Footer extends HTMLElement {
                 <a href="https://github.com/Pierrooooo" target="_blank" class="footer_list_link">GitHub</a>
               </li>
               <li class="footer_list_link">
-                <a href="mailto:pierre.caillet@ik.me" aria-label="Me contacter par email" class="footer_list_link">Email</a>
+                <a href="mailto:pierrecaillet2811@gmail.com" aria-label="Me contacter par email" class="footer_list_link">Email</a>
               </li>
             </ul>
           </div>

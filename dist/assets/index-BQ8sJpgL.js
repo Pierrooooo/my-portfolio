@@ -3882,7 +3882,7 @@ void main() {
             <div class="home-intro__image">
               <img src="/assets/photo-of-myself.jpeg" alt="Pierre CAILLET">
             </div>
-            <a data-cursor-text="email" href="mailto:pierre.caillet@ik.me" class="home-intro__button" aria-label="Me contacter par email">
+            <a data-cursor-text="email" href="mailto:pierrecaillet2811@gmail.com" class="home-intro__button" aria-label="Me contacter par email">
             <span class="texte">Me contacter</span>
             <span class="background"></span>
             </a>
@@ -3959,7 +3959,7 @@ void main() {
                 <a href="https://github.com/Pierrooooo" target="_blank" class="footer_list_link">GitHub</a>
               </li>
               <li class="footer_list_link">
-                <a href="mailto:pierre.caillet@ik.me" aria-label="Me contacter par email" class="footer_list_link">Email</a>
+                <a href="mailto:pierrecaillet2811@gmail.com" aria-label="Me contacter par email" class="footer_list_link">Email</a>
               </li>
             </ul>
           </div>
