@@ -127,10 +127,11 @@ footer.site-footer {
   .footer_bottom_text {
     margin-top: 2rem;
     font-weight: 900;
-    font-size: 18vw;
+    font-size: clamp(12vw, 14vw, 18vw);
     line-height: 0.75;
     vertical-align: middle;
     width: 100%;
     text-align: end;
+    font-family: "Kalnia", serif;
   }
 }

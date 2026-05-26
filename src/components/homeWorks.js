@@ -16,35 +16,35 @@ export function renderHomeWorks() {
       year: "2026",
       image: "/assets/ncaillet.jpg",
       url: "https://nico-portfolio.8pier.re/",
-      description: "Site Photographe",
+      description: "Dev Front-end Photographe",
     },
     {
       title: "La p'tite taverne",
       year: "2025",
       image: "/assets/tavern.jpg",
       url: "https://laptitetaverne.fr/",
-      description: "Site Restaurant",
+      description: "Dev Front-end Restaurant",
     },
     {
       title: "Kiffeur ou Kiffher",
       year: "2024",
       image: "/assets/kiffeur.jpg",
       url: "https://kiffeur.8pier.re",
-      description: "Dev Test",
+      description: "Dev Front-end",
     },
     {
       title: "Things",
       year: "2024",
       image: "/assets/things.jpg",
       url: "https://things.8pier.re",
-      description: "Dev Test",
+      description: "Dev Front-end Test",
     },
     {
       title: "Intersection Observer API",
       year: "2024",
       image: "/assets/io-api.jpg",
       url: "https://io-api.8pier.re/",
-      description: "Dev Test",
+      description: "Dev Front-end",
     },
   ];
 
@@ -62,10 +62,10 @@ export function renderHomeWorks() {
             rel="noopener noreferrer"
             data-project="${index}"
           >
-            <div class="home-works__image" style="background-image: url('${project.image}')"></div>
             <div class="home-works__content">
               <span class="home-works__year">${project.year}</span>
               <h3 class="home-works__title">${project.title}</h3>
+              <div class="home-works__image" style="background-image: url('${project.image}')"></div>
               <p class="home-works__description">${project.description}</p>
             </div>
           </a>

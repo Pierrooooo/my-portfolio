@@ -59,7 +59,7 @@ export function initCustomCursor() {
             white-space: nowrap;
             padding: 0.5rem 0.75rem;
             line-height: 1.5;
-            display: block;
+            display: inline-block;
             font-family: "Syne", sans-serif;
             `;
         ghost.textContent = text;
@@ -73,14 +73,28 @@ export function initCustomCursor() {
 
         const naturalWidth = ghost.offsetWidth;
         const naturalHeight = ghost.offsetHeight;
+
         ghost.remove();
 
+        const PADDING = 4;
+
         gsap.to(cursor, {
-          width: naturalWidth,
-          height: naturalHeight,
+          width: naturalWidth + PADDING,
+          height: naturalHeight + PADDING,
           scale: 1,
-          duration: 0.4,
+          duration: 0.2,
           ease: "power3.out",
+          onStart: () => {
+            cursorText.textContent = "";
+          },
+          onComplete: () => {
+            cursorText.textContent = text;
+            gsap.fromTo(
+              cursorText,
+              { opacity: 0, y: 6 },
+              { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
+            );
+          },
         });
 
         gsap.fromTo(
