@@ -197,6 +197,10 @@
   .home-works {
     padding: 10rem 2rem;
 
+    @media (max-width: 768px) {
+        padding-top: 0;
+      }
+
     &__item {
       position: relative;
       display: flex;

@@ -4,6 +4,10 @@ import "./components/Footer.js";
 import { initRouter, setCursorInstance } from "./router.js";
 import { initSmoothScroll } from "./utils/smoothScroll.js";
 import { initCustomCursor } from "./components/CustomCursor.js";
+import { initAudioManager } from "./utils/audioManager.js";
+
+const cursor = initCustomCursor();
+const audio = initAudioManager({ cursor });
 
 window.addEventListener("DOMContentLoaded", () => {
   initSmoothScroll();
